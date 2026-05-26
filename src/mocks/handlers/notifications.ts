@@ -67,6 +67,50 @@ export const notificationHandlers = [
     if (n) n.readStatus = true;
     return HttpResponse.json(ok({ notificationId: id, readStatus: true }));
   }),
+
+  // GET /api/v1/notifications/subscribe — SSE stream
+  http.get("*/api/v1/notifications/subscribe", () => {
+    let controllerRef: ReadableStreamDefaultController | null = null;
+
+    const stream = new ReadableStream({
+      start(controller) {
+        controllerRef = controller;
+        sseSubscribers.add(controller);
+
+        controller.enqueue(sseEncoder.encode(": ping\n\n"));
+
+        const s = getStore();
+        if (!s.firstDemoAlertSent) {
+          s.firstDemoAlertSent = true;
+          setTimeout(() => {
+            const subId = [...s.notificationSubs][0];
+            if (subId === undefined) return;
+            const a = s.auctions.get(subId);
+            if (!a) return;
+            const item = buildAuctionStartNotification(subId, a.title);
+            s.notifications.unshift(item);
+            const data = `event: auctionStartAlert\ndata: ${JSON.stringify(item)}\n\n`;
+            try {
+              controller.enqueue(sseEncoder.encode(data));
+            } catch {
+              /* closed */
+            }
+          }, 5_000);
+        }
+      },
+      cancel() {
+        if (controllerRef) sseSubscribers.delete(controllerRef);
+      },
+    });
+
+    return new HttpResponse(stream, {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+      },
+    });
+  }),
 ];
 
 // Exported for the SSE handler (and the boundary scheduler) to build payloads.
