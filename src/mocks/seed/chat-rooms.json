@@ -1,0 +1,29 @@
+[
+  {
+    "chatRoomId": 1,
+    "tradeId": 1,
+    "auctionId": 47,
+    "otherUserId": 2,
+    "lastMessage": "직거래 가능한 시간이 어떻게 되세요?",
+    "lastMessageAt": "2026-05-27T02:10:00.000Z",
+    "unreadCount": 0
+  },
+  {
+    "chatRoomId": 2,
+    "tradeId": 2,
+    "auctionId": 48,
+    "otherUserId": 3,
+    "lastMessage": "감사합니다! 잘 사용할게요.",
+    "lastMessageAt": "2026-05-25T20:30:00.000Z",
+    "unreadCount": 0
+  },
+  {
+    "chatRoomId": 3,
+    "tradeId": 3,
+    "auctionId": 49,
+    "otherUserId": 4,
+    "lastMessage": "오후 7시에 강남역에서 뵐게요.",
+    "lastMessageAt": "2026-05-24T14:15:00.000Z",
+    "unreadCount": 0
+  }
+]

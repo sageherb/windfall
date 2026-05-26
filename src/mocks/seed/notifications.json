@@ -1,0 +1,62 @@
+[
+  {
+    "notificationId": 1,
+    "type": "AUCTION_START_WISHLIST",
+    "title": "관심 경매가 곧 시작돼요",
+    "message": "MacBook Pro 14인치 M3 (거의 새 것) 경매가 5분 후 시작됩니다.",
+    "readStatus": false,
+    "target": "auction",
+    "targetId": 16,
+    "notificationAt": "2026-05-27T03:25:00.000Z"
+  },
+  {
+    "notificationId": 2,
+    "type": "PRICE_DROP",
+    "title": "찜한 경매 가격이 떨어졌어요",
+    "message": "Sony WH-1000XM5의 가격이 350,000원으로 떨어졌습니다.",
+    "readStatus": false,
+    "target": "auction",
+    "targetId": 5,
+    "notificationAt": "2026-05-27T03:20:00.000Z"
+  },
+  {
+    "notificationId": 3,
+    "type": "CHAT_MESSAGE",
+    "title": "새 메시지",
+    "message": "민호: 직거래 가능한 시간이 어떻게 되세요?",
+    "readStatus": true,
+    "target": "chatRoom",
+    "targetId": 1,
+    "notificationAt": "2026-05-27T02:10:00.000Z"
+  },
+  {
+    "notificationId": 4,
+    "type": "SALE_SUCCESS_SELLER",
+    "title": "판매가 완료됐어요",
+    "message": "iPad Air 11인치 경매가 낙찰됐습니다.",
+    "readStatus": true,
+    "target": "auction",
+    "targetId": 47,
+    "notificationAt": "2026-05-26T18:00:00.000Z"
+  },
+  {
+    "notificationId": 5,
+    "type": "REVIEW_REGISTERED",
+    "title": "새 리뷰가 등록됐어요",
+    "message": "지수님이 회원님에 대한 리뷰를 남겼어요.",
+    "readStatus": false,
+    "target": "review",
+    "targetId": 1,
+    "notificationAt": "2026-05-26T15:30:00.000Z"
+  },
+  {
+    "notificationId": 6,
+    "type": "PAYMENT_SUCCESS_BUYER",
+    "title": "결제 완료",
+    "message": "Nintendo Switch OLED 결제가 완료됐습니다.",
+    "readStatus": true,
+    "target": "payment",
+    "targetId": 1,
+    "notificationAt": "2026-05-26T10:00:00.000Z"
+  }
+]

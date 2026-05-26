@@ -1,0 +1,29 @@
+[
+  {
+    "tradeId": 1,
+    "auctionId": 47,
+    "buyerId": 1,
+    "sellerId": 2,
+    "finalPrice": 850000,
+    "status": "CONFIRMED",
+    "purchasedAt": "2026-05-26T18:00:00.000Z"
+  },
+  {
+    "tradeId": 2,
+    "auctionId": 48,
+    "buyerId": 1,
+    "sellerId": 3,
+    "finalPrice": 320000,
+    "status": "CONFIRMED",
+    "purchasedAt": "2026-05-25T20:30:00.000Z"
+  },
+  {
+    "tradeId": 3,
+    "auctionId": 49,
+    "buyerId": 1,
+    "sellerId": 4,
+    "finalPrice": 180000,
+    "status": "PENDING",
+    "purchasedAt": "2026-05-24T14:15:00.000Z"
+  }
+]

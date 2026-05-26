@@ -1,0 +1,47 @@
+[
+  {
+    "reviewId": 1,
+    "reviewerId": 3,
+    "revieweeId": 1,
+    "auctionId": 48,
+    "rating": 5,
+    "content": "친절하고 빠른 거래 감사합니다!",
+    "createdAt": "2026-05-26T15:30:00.000Z"
+  },
+  {
+    "reviewId": 2,
+    "reviewerId": 2,
+    "revieweeId": 1,
+    "auctionId": 47,
+    "rating": 5,
+    "content": "물건 상태가 너무 좋았어요.",
+    "createdAt": "2026-05-26T19:00:00.000Z"
+  },
+  {
+    "reviewId": 3,
+    "reviewerId": 1,
+    "revieweeId": 4,
+    "auctionId": 50,
+    "rating": 4,
+    "content": "약속 시간 조금 늦으셨지만 거래는 만족합니다.",
+    "createdAt": "2026-05-23T22:00:00.000Z"
+  },
+  {
+    "reviewId": 4,
+    "reviewerId": 5,
+    "revieweeId": 1,
+    "auctionId": 51,
+    "rating": 5,
+    "content": "최고!",
+    "createdAt": "2026-05-22T11:00:00.000Z"
+  },
+  {
+    "reviewId": 5,
+    "reviewerId": 1,
+    "revieweeId": 3,
+    "auctionId": 48,
+    "rating": 5,
+    "content": "정직한 거래 감사합니다.",
+    "createdAt": "2026-05-26T16:00:00.000Z"
+  }
+]

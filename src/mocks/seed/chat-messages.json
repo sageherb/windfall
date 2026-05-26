@@ -1,0 +1,218 @@
+{
+  "1": [
+    {
+      "messageId": 101,
+      "chatRoomId": 1,
+      "senderId": 2,
+      "messageType": "TEXT",
+      "content": "안녕하세요! iPad 관심있어요.",
+      "imageUrls": null,
+      "createdAt": "2026-05-27T01:30:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 102,
+      "chatRoomId": 1,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "안녕하세요 :) 어떤 점이 궁금하세요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-27T01:35:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 103,
+      "chatRoomId": 1,
+      "senderId": 2,
+      "messageType": "TEXT",
+      "content": "혹시 충전기는 같이 드리나요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-27T01:40:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 104,
+      "chatRoomId": 1,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "네 정품 충전기 포함입니다.",
+      "imageUrls": null,
+      "createdAt": "2026-05-27T01:50:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 105,
+      "chatRoomId": 1,
+      "senderId": 2,
+      "messageType": "IMAGE",
+      "content": "사진을 보냈습니다.",
+      "imageUrls": ["https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400"],
+      "createdAt": "2026-05-27T02:00:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 106,
+      "chatRoomId": 1,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "좋아요 그 정도면 OK!",
+      "imageUrls": null,
+      "createdAt": "2026-05-27T02:05:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 107,
+      "chatRoomId": 1,
+      "senderId": 2,
+      "messageType": "TEXT",
+      "content": "직거래 가능한 시간이 어떻게 되세요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-27T02:10:00.000Z",
+      "isRead": true
+    }
+  ],
+  "2": [
+    {
+      "messageId": 201,
+      "chatRoomId": 2,
+      "senderId": 3,
+      "messageType": "TEXT",
+      "content": "거래 가능한가요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T18:00:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 202,
+      "chatRoomId": 2,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "네 가능합니다.",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T18:10:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 203,
+      "chatRoomId": 2,
+      "senderId": 3,
+      "messageType": "TEXT",
+      "content": "그럼 강남역 6번 출구에서 8시에 뵐까요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T18:20:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 204,
+      "chatRoomId": 2,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "좋아요 그때 뵙겠습니다.",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T18:25:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 205,
+      "chatRoomId": 2,
+      "senderId": 3,
+      "messageType": "TEXT",
+      "content": "도착했어요.",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T20:00:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 206,
+      "chatRoomId": 2,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "곧 갈게요!",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T20:05:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 207,
+      "chatRoomId": 2,
+      "senderId": 3,
+      "messageType": "TEXT",
+      "content": "감사합니다! 잘 사용할게요.",
+      "imageUrls": null,
+      "createdAt": "2026-05-25T20:30:00.000Z",
+      "isRead": true
+    }
+  ],
+  "3": [
+    {
+      "messageId": 301,
+      "chatRoomId": 3,
+      "senderId": 4,
+      "messageType": "TEXT",
+      "content": "안녕하세요.",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T13:00:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 302,
+      "chatRoomId": 3,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "안녕하세요 :)",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T13:05:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 303,
+      "chatRoomId": 3,
+      "senderId": 4,
+      "messageType": "TEXT",
+      "content": "오늘 거래 가능하실까요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T13:30:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 304,
+      "chatRoomId": 3,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "네 가능합니다. 어디가 편하세요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T13:40:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 305,
+      "chatRoomId": 3,
+      "senderId": 4,
+      "messageType": "TEXT",
+      "content": "강남역 어떠세요?",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T13:50:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 306,
+      "chatRoomId": 3,
+      "senderId": 1,
+      "messageType": "TEXT",
+      "content": "좋아요 몇 시쯤?",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T14:00:00.000Z",
+      "isRead": true
+    },
+    {
+      "messageId": 307,
+      "chatRoomId": 3,
+      "senderId": 4,
+      "messageType": "TEXT",
+      "content": "오후 7시에 강남역에서 뵐게요.",
+      "imageUrls": null,
+      "createdAt": "2026-05-24T14:15:00.000Z",
+      "isRead": true
+    }
+  ]
+}
