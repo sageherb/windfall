@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export default function middleware(request: NextRequest) {
+  // [demo-mock] demo 빌드에서는 cookie 검사 없이 통과
+  if (process.env.NEXT_PUBLIC_DEMO === "true") return NextResponse.next();
+
   const { pathname } = request.nextUrl;
 
   const hasAccessToken = request.cookies.has("accessToken");
