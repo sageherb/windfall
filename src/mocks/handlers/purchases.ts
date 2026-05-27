@@ -17,15 +17,30 @@ export const purchaseHandlers = [
     const items = s.purchases.map((p) => {
       const auction = s.auctions.get(p.auctionId);
       const seller = s.users.get(p.sellerId);
+      const startPrice = auction?.startPrice ?? p.finalPrice;
+      const discountPercent =
+        startPrice > 0 ? Math.floor(((startPrice - p.finalPrice) / startPrice) * 100) : 0;
+      const matchedReview = s.reviews.find(
+        (r) => r.auctionId === p.auctionId && r.reviewerId === s.currentUser.userId
+      );
+      const matchedRoom = [...s.chatRooms.values()].find((r) => r.tradeId === p.tradeId);
       return {
-        tradeId: p.tradeId,
+        status: p.status === "CONFIRMED" ? "PURCHASE_CONFIRMED" : "PAYMENT_COMPLETED",
         auctionId: p.auctionId,
-        auctionTitle: auction?.title ?? "경매",
-        auctionImage: auction?.imageUrls[0] ?? null,
-        sellerName: seller?.username ?? "판매자",
-        finalPrice: p.finalPrice,
-        status: p.status,
-        purchasedAt: p.purchasedAt,
+        tradeId: p.tradeId,
+        title: auction?.title ?? "경매",
+        auctionImageUrl: auction?.imageUrls[0] ?? "",
+        startPrice,
+        endPrice: p.finalPrice,
+        discountPercent,
+        purchasedDate: p.purchasedAt,
+        reviewId: matchedReview?.reviewId,
+        chatInfo: matchedRoom
+          ? { roomId: matchedRoom.chatRoomId, unreadCount: matchedRoom.unreadCount }
+          : undefined,
+        sellerId: p.sellerId,
+        sellername: seller?.username ?? "판매자",
+        sellerProfileImage: seller?.userProfileUrl,
       };
     });
     const start = page * size;
