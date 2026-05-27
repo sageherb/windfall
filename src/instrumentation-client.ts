@@ -7,6 +7,18 @@
 import { IS_DEMO } from "@/mocks/demo-flag";
 
 if (IS_DEMO && typeof window !== "undefined") {
+  // Synchronously gate all window.fetch calls behind a workerReady promise.
+  // Next.js 16's instrumentation-client only guarantees that its sync prefix
+  // runs before the app bundle; the top-level await below does NOT block
+  // React Query mounts, so without this patch the very first useQuery fires
+  // a request before MSW can intercept it.
+  const realFetch = window.fetch.bind(window);
+  let releaseWorkerReady: () => void = () => {};
+  const workerReady = new Promise<void>((resolve) => {
+    releaseWorkerReady = resolve;
+  });
+  window.fetch = (...args: Parameters<typeof fetch>) => workerReady.then(() => realFetch(...args));
+
   document.cookie = "userId=1; path=/; SameSite=Lax";
   document.cookie = "accessToken=demo-access-token; path=/; SameSite=Lax";
   document.cookie = "refreshToken=demo-refresh-token; path=/; SameSite=Lax";
@@ -45,6 +57,9 @@ if (IS_DEMO && typeof window !== "undefined") {
     // SW that may need one reload again) can repeat the dance.
     sessionStorage.removeItem(RELOAD_FLAG);
   }
+
+  // Release any fetches queued during init now that MSW is intercepting.
+  releaseWorkerReady();
 
   // eslint-disable-next-line no-console
   console.log(
