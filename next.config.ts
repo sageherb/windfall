@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // [demo-mock] Inline demo-mode flags at build time so we don't depend on
+  // Vercel project env vars. Demo branch is the only branch deployed.
+  env: {
+    NEXT_PUBLIC_DEMO: process.env.NEXT_PUBLIC_DEMO ?? "true",
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL ?? "https://demo-disabled.local",
+  },
   reactCompiler: true,
   images: {
     remotePatterns: [
