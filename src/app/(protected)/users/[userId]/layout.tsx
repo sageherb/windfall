@@ -1,5 +1,4 @@
-import { cookies } from "next/headers";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 
@@ -14,18 +13,6 @@ interface LayoutProps {
 
 export default async function UserLayout({ children, params }: LayoutProps) {
   const { userId } = await params;
-
-  // [demo-mock] Resolve "me" to a numeric id from the cookie if middleware
-  // didn't rewrite the URL (defense in depth — the proxy middleware should
-  // handle this, but client navigations or edge cases sometimes don't).
-  if (userId === "me") {
-    const cookieStore = await cookies();
-    const myId = cookieStore.get("userId")?.value;
-    if (myId) {
-      redirect(`/users/${myId}`);
-    }
-    redirect("/auth/login");
-  }
 
   const targetUserId = Number(userId);
 
