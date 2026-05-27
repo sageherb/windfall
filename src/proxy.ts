@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+import { IS_DEMO } from "@/mocks/demo-flag";
+
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // [demo-mock] demo 빌드: SSR 응답에 인증 쿠키 주입 + /users/me rewrite
-  if (process.env.NEXT_PUBLIC_DEMO === "true") {
+  if (IS_DEMO) {
     const existingUserId = request.cookies.get("userId")?.value;
     const demoUserId = existingUserId ?? "1";
 

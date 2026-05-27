@@ -8,7 +8,8 @@ export async function register() {
     "NEXT_RUNTIME=",
     process.env.NEXT_RUNTIME,
   );
-  if (process.env.NEXT_PUBLIC_DEMO !== "true") return;
+  const { IS_DEMO } = await import("@/mocks/demo-flag");
+  if (!IS_DEMO) return;
   if (process.env.NEXT_RUNTIME === "nodejs") {
     const { server } = await import("@/mocks/node");
     server.listen({ onUnhandledRequest: "bypass" });

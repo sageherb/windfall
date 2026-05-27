@@ -8,7 +8,8 @@ async function bootstrap() {
     "[demo-mock] instrumentation-client top-level run. NEXT_PUBLIC_DEMO=",
     process.env.NEXT_PUBLIC_DEMO,
   );
-  if (process.env.NEXT_PUBLIC_DEMO !== "true") return;
+  const { IS_DEMO } = await import("@/mocks/demo-flag");
+  if (!IS_DEMO) return;
   if (typeof window === "undefined") return;
 
   document.cookie = "userId=1; path=/; SameSite=Lax";

@@ -36,7 +36,8 @@ async function getRequestBody(req: NextRequest): Promise<{
 
 async function proxyHandler(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
   // [demo-mock] MSW가 가로채지 못한 요청 안전 차단
-  if (process.env.NEXT_PUBLIC_DEMO === "true") {
+  const { IS_DEMO } = await import("@/mocks/demo-flag");
+  if (IS_DEMO) {
     return NextResponse.json({ error: "demo: no backend" }, { status: 503 });
   }
   const { path } = await params;
