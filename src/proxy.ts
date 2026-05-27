@@ -2,10 +2,17 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export default function middleware(request: NextRequest) {
-  // [demo-mock] demo 빌드에서는 cookie 검사 없이 통과
-  if (process.env.NEXT_PUBLIC_DEMO === "true") return NextResponse.next();
-
   const { pathname } = request.nextUrl;
+
+  // [demo-mock] demo 빌드: cookie 검사 skip + /users/me rewrite는 그대로 유지
+  if (process.env.NEXT_PUBLIC_DEMO === "true") {
+    const demoUserId = request.cookies.get("userId")?.value;
+    if (pathname.startsWith("/users/me") && demoUserId) {
+      const newPath = pathname.replace("/users/me", `/users/${demoUserId}`);
+      return NextResponse.rewrite(new URL(newPath, request.url));
+    }
+    return NextResponse.next();
+  }
 
   const hasAccessToken = request.cookies.has("accessToken");
   const hasRefreshToken = request.cookies.has("refreshToken");

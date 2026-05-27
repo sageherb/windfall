@@ -90,19 +90,28 @@ export const auctionHandlers = [
     const page = Math.max(1, Number(url.searchParams.get("page") ?? 1));
     const size = Number(url.searchParams.get("size") ?? 15);
     const sortBy = url.searchParams.get("sortBy") ?? "createDate";
-    const sortDirection = url.searchParams.get("sortDirection") ?? "ASC";
+    const sortDirection = url.searchParams.get("sortDirection") ?? "DESC";
 
     const now = Date.now();
     let items = [...s.auctions.values()];
 
     if (query)
       items = items.filter((a) => a.title.includes(query) || a.tags.some((t) => t.includes(query)));
-    if (category) items = items.filter((a) => a.category === category);
-    if (status) items = items.filter((a) => a.status === status);
+    if (category && category !== "ALL") items = items.filter((a) => a.category === category);
+    if (status && status !== "ALL") items = items.filter((a) => a.status === status);
     if (minPrice) items = items.filter((a) => a.startPrice >= Number(minPrice));
     if (maxPrice) items = items.filter((a) => a.startPrice <= Number(maxPrice));
 
+    const STATUS_RANK: Record<string, number> = {
+      PROCESS: 0,
+      SCHEDULED: 1,
+      COMPLETED: 2,
+      CANCELED: 3,
+    };
     items.sort((a, b) => {
+      const statusDelta = (STATUS_RANK[a.status] ?? 9) - (STATUS_RANK[b.status] ?? 9);
+      if (statusDelta !== 0) return statusDelta;
+
       let cmp: number;
       if (sortBy === "startPrice") {
         cmp = a.startPrice - b.startPrice;
