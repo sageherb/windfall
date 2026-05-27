@@ -10,17 +10,16 @@ import { purchaseHandlers } from "./purchases";
 import { reviewHandlers } from "./reviews";
 import { userHandlers } from "./users";
 
-// [demo-mock] msw/node only sees server-side fetches that hit
-// `${API_URL}/api/v1/...` (absolute URLs). Path-only handler patterns like
-// `/api/v1/auctions/:id` do not match those absolute URLs, so SSR pages
-// would throw and surface as "Server Components render" errors. We mirror
-// every path-only handler at the absolute URL prefix so msw/node can match
-// too. The browser worker still matches the original same-origin path-only
-// pattern, so client fetches keep working.
+// [demo-mock] The client codebase fetches `/api/proxy/api/v1/...` (browser,
+// same-origin) and server.ts fetches `${API_URL}/api/v1/...` (msw/node).
+// Handlers are authored as path-only `/api/v1/...` for readability, so we
+// auto-expand every path-only handler under the two prefixes the app
+// actually uses, sharing the same resolver. SockJS / catch-all handlers
+// stay untouched because their paths aren't `/api/v1`-shaped.
 const ABSOLUTE_BASE = process.env.NEXT_PUBLIC_API_URL ?? "";
+const PROXY_PREFIX = "/api/proxy";
 
-function withAbsoluteFallback(handlers: RequestHandler[]): RequestHandler[] {
-  if (!ABSOLUTE_BASE) return handlers;
+function withDemoFallbacks(handlers: RequestHandler[]): RequestHandler[] {
   return handlers.flatMap((h) => {
     const { info } = h as unknown as { info?: { method?: string; path?: unknown } };
     const { resolver } = h as unknown as { resolver?: unknown };
@@ -31,10 +30,13 @@ function withAbsoluteFallback(handlers: RequestHandler[]): RequestHandler[] {
     }
     const fn = (http as unknown as Record<string, unknown>)[method];
     if (typeof fn !== "function") return [h];
-    return [
-      h,
-      (fn as (p: string, r: unknown) => RequestHandler)(`${ABSOLUTE_BASE}${path}`, resolver),
-    ];
+    const make = (p: string) => (fn as (path: string, r: unknown) => RequestHandler)(p, resolver);
+    const variants: RequestHandler[] = [h, make(`${PROXY_PREFIX}${path}`)];
+    if (ABSOLUTE_BASE) {
+      variants.push(make(`${ABSOLUTE_BASE}${path}`));
+      variants.push(make(`${ABSOLUTE_BASE}${PROXY_PREFIX}${path}`));
+    }
+    return variants;
   });
 }
 
@@ -71,7 +73,7 @@ const catchAllProxy = http.all("/api/v1/*", ({ request }) => {
   );
 });
 
-export const handlers = withAbsoluteFallback([
+export const handlers = withDemoFallbacks([
   ...authHandlers,
   ...userHandlers,
   ...auctionHandlers,
