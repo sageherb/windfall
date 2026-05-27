@@ -24,7 +24,7 @@
     "description": "미개봉 정품입니다. 선물 받았으나 중복이라 판매합니다.",
     "category": "GOODS",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1631730486784-74757628e2dd?w=800",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800",
       "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800"
     ],
@@ -610,7 +610,7 @@
     "description": "구매 영수증 있으며 구성품 완전합니다. 정품 확인 가능합니다.",
     "category": "ETC",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1616627577385-2c8a68f3dfa8?w=800",
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
       "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800"
     ],
     "sellerId": 4,
@@ -740,7 +740,7 @@
     "category": "ETC",
     "imageUrls": [
       "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800",
-      "https://images.unsplash.com/photo-1616627577385-2c8a68f3dfa8?w=800",
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800",
       "https://images.unsplash.com/photo-1484627147104-f5197bcd6651?w=800"
     ],
     "sellerId": 3,
@@ -1050,7 +1050,7 @@
     "description": "백화점 구매 정품, 영수증 있습니다. 개인 사정으로 판매합니다.",
     "category": "GOODS",
     "imageUrls": [
-      "https://images.unsplash.com/photo-1631730486784-74757628e2dd?w=800",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800"
     ],
     "sellerId": 4,
@@ -1180,7 +1180,7 @@
     "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800",
-      "https://images.unsplash.com/photo-1631730486784-74757628e2dd?w=800",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800"
     ],
     "sellerId": 3,
@@ -1638,7 +1638,7 @@
     "title": "탁구 세트 라켓 2개 포함",
     "description": "가볍게 사용하고 깨끗하게 관리했습니다. 포장 꼼꼼히 하여 발송합니다.",
     "category": "ETC",
-    "imageUrls": ["https://images.unsplash.com/photo-1616627577385-2c8a68f3dfa8?w=800"],
+    "imageUrls": ["https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"],
     "sellerId": 4,
     "startPrice": 860000,
     "dropAmount": 29000,
@@ -1766,7 +1766,7 @@
     "category": "ETC",
     "imageUrls": [
       "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800",
-      "https://images.unsplash.com/photo-1616627577385-2c8a68f3dfa8?w=800"
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800"
     ],
     "sellerId": 3,
     "startPrice": 2050000,
