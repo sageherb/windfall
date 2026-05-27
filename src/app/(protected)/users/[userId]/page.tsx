@@ -23,7 +23,7 @@ export default async function Page({ params }: PageProps) {
   }
 
   if (profile.isOwner) {
-    redirect(`/users/me/calendar`);
+    redirect(`/users/${targetUserId}/calendar`);
   } else {
     redirect(`/users/${targetUserId}/sales`);
   }
