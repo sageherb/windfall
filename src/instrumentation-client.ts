@@ -13,22 +13,44 @@ if (IS_DEMO && typeof window !== "undefined") {
 
   const { worker } = await import("@/mocks/browser");
   await worker.start({ onUnhandledRequest: "bypass", quiet: true });
+
+  // The SW can be "active" but not yet "controller" of the current page.
+  // Without a controller, fetches bypass MSW and hit the real network —
+  // which in demo mode rewrites to a fake backend and 502s.
+  const RELOAD_FLAG = "__msw_demo_reloaded__";
+
+  if (!navigator.serviceWorker.controller) {
+    // Wait briefly for the SW to claim this page.
+    await new Promise<void>((resolve) => {
+      navigator.serviceWorker.addEventListener("controllerchange", () => resolve(), {
+        once: true,
+      });
+      setTimeout(resolve, 1500);
+    });
+  }
+
+  if (!navigator.serviceWorker.controller) {
+    if (!sessionStorage.getItem(RELOAD_FLAG)) {
+      sessionStorage.setItem(RELOAD_FLAG, "1");
+      // eslint-disable-next-line no-console
+      console.log("[demo-mock] no controller after start — reloading once");
+      window.location.reload();
+      // Stop module evaluation so React never mounts before reload, which
+      // otherwise lets React Query fire real fetches through the unmocked
+      // network and 502 on the rewritten backend.
+      await new Promise(() => {});
+    }
+  } else {
+    // Successful controller — clear the flag so future deploys (with a new
+    // SW that may need one reload again) can repeat the dance.
+    sessionStorage.removeItem(RELOAD_FLAG);
+  }
+
   // eslint-disable-next-line no-console
   console.log(
     "[demo-mock] msw/browser worker.start() OK. controller=",
     navigator.serviceWorker.controller ? "yes" : "no"
   );
-
-  // If the service worker activated but is not yet controlling this page,
-  // wait for the controllerchange event (or a short timeout) then reload
-  // once so all subsequent fetches are intercepted.
-  const RELOAD_FLAG = "__msw_demo_reloaded__";
-  if (!navigator.serviceWorker.controller && !sessionStorage.getItem(RELOAD_FLAG)) {
-    sessionStorage.setItem(RELOAD_FLAG, "1");
-    // eslint-disable-next-line no-console
-    console.log("[demo-mock] no controller after start — reloading once");
-    window.location.reload();
-  }
 
   const { startSseBoundaryScheduler } = await import("@/mocks/time/scheduler");
   startSseBoundaryScheduler();
