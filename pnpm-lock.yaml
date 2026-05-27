@@ -11,6 +11,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.10.0(react-hook-form@7.69.0(react@19.2.1))
+      '@mswjs/interceptors':
+        specifier: ^0.41.9
+        version: 0.41.9
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.15
         version: 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -89,6 +92,9 @@ importers:
       motion:
         specifier: ^12.25.0
         version: 12.25.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      msw:
+        specifier: ^2.14.6
+        version: 2.14.6(@types/node@20.19.25)(typescript@5.9.3)
       nanoid:
         specifier: ^5.1.6
         version: 5.1.6
@@ -150,9 +156,6 @@ importers:
       '@eslint/js':
         specifier: ^9.39.1
         version: 9.39.1
-      '@mswjs/interceptors':
-        specifier: ^0.41.9
-        version: 0.41.9
       '@next/eslint-plugin-next':
         specifier: ^16.0.8
         version: 16.0.8
@@ -225,9 +228,6 @@ importers:
       lint-staged:
         specifier: ^16.2.7
         version: 16.2.7
-      msw:
-        specifier: ^2.14.6
-        version: 2.14.6(@types/node@20.19.25)(typescript@5.9.3)
       prettier:
         specifier: ^3.7.4
         version: 3.7.4
