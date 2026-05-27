@@ -90,22 +90,35 @@ export const userHandlers = [
     return HttpResponse.json(ok(slice(items, page, size)));
   }),
 
-  // GET /api/v1/users/:userId/reviews
+  // GET /api/v1/users/:userId/reviews — reviews written for this seller
   http.get("*/api/v1/users/:userId/reviews", ({ params, request }) => {
     const s = getStore();
-    const revieweeId = Number(params.userId);
+    const sellerId = Number(params.userId);
     const url = new URL(request.url);
     const page = Number(url.searchParams.get("page") ?? 0);
-    const size = Number(url.searchParams.get("size") ?? 15);
+    const size = Number(url.searchParams.get("size") ?? 5);
+    const seller = s.users.get(sellerId) ?? s.currentUser;
     const items = s.reviews
-      .filter((r) => r.revieweeId === revieweeId)
-      .map((r) => ({
-        reviewId: r.reviewId,
-        reviewer: s.users.get(r.reviewerId),
-        rating: r.rating,
-        content: r.content,
-        createdAt: r.createdAt,
-      }));
+      .filter((r) => r.revieweeId === sellerId)
+      .map((r) => {
+        const reviewer = s.users.get(r.reviewerId);
+        const auction = s.auctions.get(r.auctionId);
+        return {
+          reviewId: r.reviewId,
+          auctionId: r.auctionId,
+          buyerId: r.reviewerId,
+          nickname: reviewer?.username ?? "익명",
+          userImageUrl: reviewer?.userProfileUrl ?? "",
+          rating: r.rating,
+          content: r.content,
+          sellerId: seller.userId,
+          sellerName: seller.username,
+          sellerProfileImage: seller.userProfileUrl,
+          auctionImageUrl: auction?.imageUrls[0] ?? "",
+          auctionTitle: auction?.title ?? "경매",
+          reviewedAt: r.createdAt,
+        };
+      });
     return HttpResponse.json(ok(slice(items, page, size)));
   }),
 
