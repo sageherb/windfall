@@ -41,6 +41,10 @@ const nextConfig: NextConfig = {
     ],
   },
   async rewrites() {
+    // [demo-mock] demo 브랜치에서는 백엔드가 없다. /api/v1/* 외부 rewrite를
+    // 완전히 차단해서 fake host(demo-disabled.local)로 새지 않게 한다.
+    // dev/main 브랜치 복원 시 아래 배열을 원복할 것.
+    if ((process.env.NEXT_PUBLIC_DEMO ?? "true") === "true") return [];
     return [
       {
         source: "/api/v1/:path*",

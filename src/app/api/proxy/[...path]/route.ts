@@ -35,10 +35,42 @@ async function getRequestBody(req: NextRequest): Promise<{
 }
 
 async function proxyHandler(req: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
-  // [demo-mock] MSW가 가로채지 못한 요청 안전 차단
+  // [demo-mock] demo 모드에서 이 route는 authoritative하다. 들어온 path를
+  // `${API_BASE_URL}/${path}` 절대 URL로 변환해서 globalThis.fetch를 호출하면
+  // instrumentation.ts에서 부팅된 msw/node가 그 fetch를 가로채서 mock 응답을
+  // 돌려준다. 즉 browser Service Worker 활성화 race를 완전히 회피한다.
   const { IS_DEMO } = await import("@/mocks/demo-flag");
   if (IS_DEMO) {
-    return NextResponse.json({ error: "demo: no backend" }, { status: 503 });
+    const { path } = await params;
+    const { search } = req.nextUrl;
+    const apiUrl = `${API_BASE_URL}/${path.join("/")}${search}`;
+
+    const requestBody = await getRequestBody(req);
+    const headers = new Headers(req.headers);
+    headers.delete("host");
+    headers.delete("content-length");
+    if (requestBody.isFormData && req.headers.get("content-type")) {
+      headers.set("content-type", req.headers.get("content-type")!);
+    }
+
+    try {
+      const apiResponse = await fetch(apiUrl, {
+        method: req.method,
+        headers,
+        body: requestBody.body,
+        cache: "no-store",
+      });
+      return new NextResponse(apiResponse.body, {
+        status: apiResponse.status,
+        headers: apiResponse.headers,
+      });
+    } catch (error) {
+      console.error("[demo-mock] proxy dispatch failed:", error);
+      return NextResponse.json(
+        { code: 500, status: "ERROR", message: "demo mock dispatch failed", data: null },
+        { status: 500 }
+      );
+    }
   }
   const { path } = await params;
   const pathString = path.join("/");
