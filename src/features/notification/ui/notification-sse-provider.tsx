@@ -7,11 +7,15 @@ import { useQueryClient } from "@tanstack/react-query";
 import { notificationKeys } from "@/features/notification/api/use-notifications";
 import type { NotificationItem } from "@/features/notification/model/types";
 import { useUserBasic } from "@/features/user/api/use-user-basic";
+import { IS_DEMO } from "@/mocks/demo-flag";
 import type { SliceResponseType } from "@/shared/api/types/response";
 import { API_ENDPOINTS } from "@/shared/config/endpoints";
 import { showToast } from "@/shared/lib/utils/toast/show-toast";
 
-const PROXY_BASE_URL = "/api/proxy";
+// [demo-mock] In demo mode the EventSource must hit the same `/api/v1/...`
+// path the MSW handler is registered against (same-origin). The `/api/proxy`
+// prefix would route through the Next.js proxy handler which 503s in demo.
+const PROXY_BASE_URL = IS_DEMO ? "" : "/api/proxy";
 const SSE_EVENT_TYPES = [
   "priceAlert",
   "auctionStartAlert",
