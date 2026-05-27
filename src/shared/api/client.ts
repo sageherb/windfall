@@ -1,6 +1,12 @@
+import { IS_DEMO } from "@/mocks/demo-flag";
+
 import type { ApiResponseType } from "./types/response";
 
-const PROXY_BASE_URL = "/api/proxy";
+// [demo-mock] In demo mode the client must fetch the same `/api/v1/...` paths
+// the MSW handlers match against (`*/api/v1/*`). The `/api/proxy` prefix used
+// in the real app routes through a Next.js route handler that calls the real
+// backend, which MSW can't intercept and which has no backend in the demo.
+const PROXY_BASE_URL = IS_DEMO ? "" : "/api/proxy";
 
 export class ApiError extends Error {
   constructor(
