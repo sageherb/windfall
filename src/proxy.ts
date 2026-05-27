@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 import { IS_DEMO } from "@/mocks/demo-flag";
 
-export default function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // [demo-mock] demo 빌드: SSR 응답에 인증 쿠키 주입 + /users/me rewrite
