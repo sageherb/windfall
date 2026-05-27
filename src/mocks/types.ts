@@ -3,8 +3,18 @@
 // Mirror of backend AuctionStatus enum
 export type AuctionStatus = "SCHEDULED" | "PROCESS" | "COMPLETED" | "CANCELED";
 
-// Mirror of backend AuctionCategory enum (use a subset that the seed needs)
-export type AuctionCategory = "DIGITAL" | "FASHION" | "BEAUTY" | "BOOK" | "HOME" | "SPORTS" | "ETC";
+// Mirror of backend AuctionCategory enum
+export type AuctionCategory =
+  | "CLOTHING"
+  | "GOODS"
+  | "FURNITURE_INTERIOR"
+  | "DIGITAL"
+  | "APPLIANCE"
+  | "SPORTS_LEISURE"
+  | "PET"
+  | "HOBBY"
+  | "BOOK_TICKET"
+  | "ETC";
 
 // Mirror of backend ApiResponse<T>
 export interface ApiResponse<T> {

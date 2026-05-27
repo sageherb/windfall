@@ -3,7 +3,7 @@
     "auctionId": 1,
     "title": "코오롱 스포츠 자켓 100사이즈",
     "description": "2-3회 착용, 세탁 후 보관 중입니다. 실착 사진 추가 제공 가능합니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
       "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800"
@@ -22,7 +22,7 @@
     "auctionId": 2,
     "title": "설화수 자음생 세트",
     "description": "미개봉 정품입니다. 선물 받았으나 중복이라 판매합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1631730486784-74757628e2dd?w=800",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800",
@@ -42,7 +42,7 @@
     "auctionId": 3,
     "title": "미움받을 용기 (오리지널)",
     "description": "초판본으로 희귀한 버전입니다. 수집용으로도 좋습니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": ["https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800"],
     "sellerId": 5,
     "startPrice": 870000,
@@ -58,7 +58,7 @@
     "auctionId": 4,
     "title": "네스프레소 버츄오 플러스",
     "description": "가정용으로 가볍게 사용했습니다. 원박스 보관 중입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800",
       "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=800"
@@ -77,7 +77,7 @@
     "auctionId": 5,
     "title": "피트니스 덤벨 세트 20kg",
     "description": "해외 직구 정품, 박스 및 구성품 완전합니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800",
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800",
@@ -132,7 +132,7 @@
     "auctionId": 8,
     "title": "폴로 랄프로렌 피케 셔츠",
     "description": "구매 후 한 번만 착용했습니다. 원본 박스 및 영수증 포함입니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=800",
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
@@ -152,7 +152,7 @@
     "auctionId": 9,
     "title": "다이슨 에어랩 멀티스타일러",
     "description": "1회 사용 후 피부 트러블로 판매합니다. 위생상 교환 불가입니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": ["https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800"],
     "sellerId": 3,
     "startPrice": 1890000,
@@ -168,7 +168,7 @@
     "auctionId": 10,
     "title": "클루지 (게리 마커스)",
     "description": "1회 읽고 보관 중, 택배 발송 시 뽁뽁이 꼼꼼히 포장합니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800",
       "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800"
@@ -187,7 +187,7 @@
     "auctionId": 11,
     "title": "삼성 비스포크 냉장고 패널",
     "description": "1년 사용 후 이사로 판매합니다. 작동 완벽, 청소 완료 상태입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800",
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800",
@@ -207,7 +207,7 @@
     "auctionId": 12,
     "title": "미즈노 야구 글러브",
     "description": "입문용으로 구매 후 취미 변경으로 판매합니다. 정품 보증 가능합니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": ["https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800"],
     "sellerId": 2,
     "startPrice": 2400000,
@@ -262,7 +262,7 @@
     "auctionId": 15,
     "title": "발렌시아가 트랙 스니커즈",
     "description": "브랜드 정품이며 구매 영수증 있습니다. 먼저 연락 주시면 실착 사진 드립니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": ["https://images.unsplash.com/photo-1562183241-b937e95585b6?w=800"],
     "sellerId": 1,
     "startPrice": 2910000,
@@ -278,7 +278,7 @@
     "auctionId": 16,
     "title": "라메르 크림 30ml (정품)",
     "description": "70% 이상 잔량, 직구 정품입니다. 냉암소 보관하였으며 유통기한 여유 있습니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=800",
       "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800"
@@ -297,7 +297,7 @@
     "auctionId": 17,
     "title": "해리포터 시리즈 전권 세트",
     "description": "거의 새 책 상태입니다. 밑줄 없고 깨끗하게 보관했습니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
       "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800",
@@ -317,7 +317,7 @@
     "auctionId": 18,
     "title": "르크루제 코코트 론드 22cm",
     "description": "미개봉 새 제품입니다. 이중 포장으로 안전하게 배송해드립니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": ["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800"],
     "sellerId": 4,
     "startPrice": 460000,
@@ -333,7 +333,7 @@
     "auctionId": 19,
     "title": "스페셜라이즈드 MTB 자전거",
     "description": "1년 미만 사용, 관리 잘 된 제품입니다. 추가 액세서리 포함.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800",
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800"
@@ -388,7 +388,7 @@
     "auctionId": 22,
     "title": "컨버스 척70 하이탑 블랙",
     "description": "작년 구매, 사이즈가 맞지 않아 판매합니다. 택 포함, 거의 새 것 상태입니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800",
       "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=800"
@@ -407,7 +407,7 @@
     "auctionId": 23,
     "title": "조 말론 피오니 블러셔 향수",
     "description": "백화점 구매 정품, 영수증 있습니다. 개인 사정으로 판매합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800",
       "https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=800",
@@ -427,7 +427,7 @@
     "auctionId": 24,
     "title": "파친코 1-2권 세트",
     "description": "전집 세트 전권 포함, 케이스까지 완전한 상태입니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": ["https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800"],
     "sellerId": 2,
     "startPrice": 1480000,
@@ -443,7 +443,7 @@
     "auctionId": 25,
     "title": "코웨이 공기청정기 AP-1515F",
     "description": "정기 세척 및 필터 교체 완료 상태입니다. 설명서 및 추가 필터 포함.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800",
       "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800"
@@ -462,7 +462,7 @@
     "auctionId": 26,
     "title": "타이틀리스트 골프채 세트",
     "description": "시즌 1회 사용 후 보관 중입니다. 스크래치 없이 깨끗한 상태입니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800",
       "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800",
@@ -517,7 +517,7 @@
     "auctionId": 29,
     "title": "구찌 캔버스 토트백",
     "description": "정품 구매, 빈티지 느낌으로 관리 잘 되어 있습니다. 교환 불가합니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=800",
       "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800",
@@ -537,7 +537,7 @@
     "auctionId": 30,
     "title": "헤라 쿠션 리필 포함",
     "description": "해외 면세점 구매, 정품 보증 가능합니다. 사용감 없이 깨끗합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": ["https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=800"],
     "sellerId": 4,
     "startPrice": 2500000,
@@ -553,7 +553,7 @@
     "auctionId": 31,
     "title": "2024 공인중개사 기본서 세트",
     "description": "구매 후 1회 정독, 낙서 없이 깨끗합니다. 책등 상태 양호합니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800",
       "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800"
@@ -572,7 +572,7 @@
     "auctionId": 32,
     "title": "다이슨 V15 무선청소기",
     "description": "구매 후 6개월 사용, 기능 이상 없으며 구성품 모두 포함입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800",
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800",
@@ -592,7 +592,7 @@
     "auctionId": 33,
     "title": "나이키 줌 페가수스 40 운동화",
     "description": "대회용으로 구매했으나 부상으로 사용 못 하게 되었습니다. 상태 최상입니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": ["https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800"],
     "sellerId": 3,
     "startPrice": 50000,
@@ -647,7 +647,7 @@
     "auctionId": 36,
     "title": "뉴발란스 990v5 그레이",
     "description": "2-3회 착용, 세탁 후 보관 중입니다. 실착 사진 추가 제공 가능합니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": ["https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=800"],
     "sellerId": 1,
     "startPrice": 560000,
@@ -663,7 +663,7 @@
     "auctionId": 37,
     "title": "샤넬 블루 드 샤넬 향수",
     "description": "미개봉 정품입니다. 선물 받았으나 중복이라 판매합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?w=800",
       "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=800"
@@ -682,7 +682,7 @@
     "auctionId": 38,
     "title": "돈의 속성 (김승호)",
     "description": "초판본으로 희귀한 버전입니다. 수집용으로도 좋습니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800",
       "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800",
@@ -702,7 +702,7 @@
     "auctionId": 39,
     "title": "발뮤다 공기청정기",
     "description": "가정용으로 가볍게 사용했습니다. 원박스 보관 중입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"],
     "sellerId": 5,
     "startPrice": 1070000,
@@ -718,7 +718,7 @@
     "auctionId": 40,
     "title": "아디다스 축구화 프레데터",
     "description": "해외 직구 정품, 박스 및 구성품 완전합니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800",
       "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800"
@@ -773,7 +773,7 @@
     "auctionId": 43,
     "title": "나이키 조던 1 레트로 하이",
     "description": "구매 후 한 번만 착용했습니다. 원본 박스 및 영수증 포함입니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800",
       "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=800"
@@ -792,7 +792,7 @@
     "auctionId": 44,
     "title": "클라란스 더블 세럼",
     "description": "1회 사용 후 피부 트러블로 판매합니다. 위생상 교환 불가입니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800",
       "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?w=800",
@@ -812,7 +812,7 @@
     "auctionId": 45,
     "title": "데일 카네기 인간관계론",
     "description": "1회 읽고 보관 중, 택배 발송 시 뽁뽁이 꼼꼼히 포장합니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": ["https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800"],
     "sellerId": 3,
     "startPrice": 2090000,
@@ -828,7 +828,7 @@
     "auctionId": 46,
     "title": "발뮤다 토스터 오븐 화이트",
     "description": "1년 사용 후 이사로 판매합니다. 작동 완벽, 청소 완료 상태입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
@@ -847,7 +847,7 @@
     "auctionId": 47,
     "title": "윌슨 프로 테니스 라켓",
     "description": "입문용으로 구매 후 취미 변경으로 판매합니다. 정품 보증 가능합니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=800",
       "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800",
@@ -902,7 +902,7 @@
     "auctionId": 50,
     "title": "유니클로 울트라라이트 다운 재킷",
     "description": "브랜드 정품이며 구매 영수증 있습니다. 먼저 연락 주시면 실착 사진 드립니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800",
       "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800",
@@ -922,7 +922,7 @@
     "auctionId": 51,
     "title": "나스 블러셔 팔레트",
     "description": "70% 이상 잔량, 직구 정품입니다. 냉암소 보관하였으며 유통기한 여유 있습니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": ["https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800"],
     "sellerId": 5,
     "startPrice": 150000,
@@ -938,7 +938,7 @@
     "auctionId": 52,
     "title": "채식주의자 한강 사인본",
     "description": "거의 새 책 상태입니다. 밑줄 없고 깨끗하게 보관했습니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
       "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800"
@@ -957,7 +957,7 @@
     "auctionId": 53,
     "title": "브리타 정수기 포트 XL",
     "description": "미개봉 새 제품입니다. 이중 포장으로 안전하게 배송해드립니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=800",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
@@ -977,7 +977,7 @@
     "auctionId": 54,
     "title": "스키 부츠 및 바인딩 세트",
     "description": "1년 미만 사용, 관리 잘 된 제품입니다. 추가 액세서리 포함.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": ["https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800"],
     "sellerId": 4,
     "startPrice": 660000,
@@ -1032,7 +1032,7 @@
     "auctionId": 57,
     "title": "빈폴 울 코트 M사이즈",
     "description": "작년 구매, 사이즈가 맞지 않아 판매합니다. 택 포함, 거의 새 것 상태입니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": ["https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800"],
     "sellerId": 1,
     "startPrice": 1170000,
@@ -1048,7 +1048,7 @@
     "auctionId": 58,
     "title": "랑콤 제니피크 세럼",
     "description": "백화점 구매 정품, 영수증 있습니다. 개인 사정으로 판매합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1631730486784-74757628e2dd?w=800",
       "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800"
@@ -1067,7 +1067,7 @@
     "auctionId": 59,
     "title": "연금술사 (파울로 코엘료)",
     "description": "전집 세트 전권 포함, 케이스까지 완전한 상태입니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800",
       "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800",
@@ -1087,7 +1087,7 @@
     "auctionId": 60,
     "title": "스탠드 조명 플로어램프",
     "description": "정기 세척 및 필터 교체 완료 상태입니다. 설명서 및 추가 필터 포함.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800"],
     "sellerId": 2,
     "startPrice": 1680000,
@@ -1103,7 +1103,7 @@
     "auctionId": 61,
     "title": "요넥스 아크세이버 배드민턴 라켓",
     "description": "시즌 1회 사용 후 보관 중입니다. 스크래치 없이 깨끗한 상태입니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800",
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800"
@@ -1158,7 +1158,7 @@
     "auctionId": 64,
     "title": "노스페이스 눕시 패딩 점퍼",
     "description": "정품 구매, 빈티지 느낌으로 관리 잘 되어 있습니다. 교환 불가합니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=800",
       "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800"
@@ -1177,7 +1177,7 @@
     "auctionId": 65,
     "title": "맥 립스틱 한정판 세트",
     "description": "해외 면세점 구매, 정품 보증 가능합니다. 사용감 없이 깨끗합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800",
       "https://images.unsplash.com/photo-1631730486784-74757628e2dd?w=800",
@@ -1197,7 +1197,7 @@
     "auctionId": 66,
     "title": "코스모스 (칼 세이건)",
     "description": "구매 후 1회 정독, 낙서 없이 깨끗합니다. 책등 상태 양호합니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": ["https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800"],
     "sellerId": 4,
     "startPrice": 2700000,
@@ -1213,7 +1213,7 @@
     "auctionId": 67,
     "title": "무인양품 가습기 초음파식",
     "description": "구매 후 6개월 사용, 기능 이상 없으며 구성품 모두 포함입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800",
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800"
@@ -1232,7 +1232,7 @@
     "auctionId": 68,
     "title": "블랙야크 등산화 255mm",
     "description": "대회용으로 구매했으나 부상으로 사용 못 하게 되었습니다. 상태 최상입니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",
       "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800",
@@ -1287,7 +1287,7 @@
     "auctionId": 71,
     "title": "몽클레어 다운 베스트",
     "description": "2-3회 착용, 세탁 후 보관 중입니다. 실착 사진 추가 제공 가능합니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=800",
       "https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=800",
@@ -1307,7 +1307,7 @@
     "auctionId": 72,
     "title": "이니스프리 그린티 세럼 세트",
     "description": "미개봉 정품입니다. 선물 받았으나 중복이라 판매합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": ["https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=800"],
     "sellerId": 2,
     "startPrice": 760000,
@@ -1323,7 +1323,7 @@
     "auctionId": 73,
     "title": "아몬드 손원평 초판",
     "description": "초판본으로 희귀한 버전입니다. 수집용으로도 좋습니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
       "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800"
@@ -1342,7 +1342,7 @@
     "auctionId": 74,
     "title": "한샘 6단 수납장",
     "description": "가정용으로 가볍게 사용했습니다. 원박스 보관 중입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800",
       "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800",
@@ -1362,7 +1362,7 @@
     "auctionId": 75,
     "title": "필라테스 폼롤러 세트",
     "description": "해외 직구 정품, 박스 및 구성품 완전합니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": ["https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800"],
     "sellerId": 5,
     "startPrice": 1270000,
@@ -1417,7 +1417,7 @@
     "auctionId": 78,
     "title": "아디다스 삼바 OG 블랙",
     "description": "구매 후 한 번만 착용했습니다. 원본 박스 및 영수증 포함입니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": ["https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800"],
     "sellerId": 1,
     "startPrice": 1780000,
@@ -1433,7 +1433,7 @@
     "auctionId": 79,
     "title": "SK-II 페이셜 트리트먼트 에센스",
     "description": "1회 사용 후 피부 트러블로 판매합니다. 위생상 교환 불가입니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800",
       "https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=800"
@@ -1452,7 +1452,7 @@
     "auctionId": 80,
     "title": "82년생 김지영 초판본",
     "description": "1회 읽고 보관 중, 택배 발송 시 뽁뽁이 꼼꼼히 포장합니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=800",
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800",
@@ -1472,7 +1472,7 @@
     "auctionId": 81,
     "title": "테팔 에어프라이어 4.2L",
     "description": "1년 사용 후 이사로 판매합니다. 작동 완벽, 청소 완료 상태입니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": ["https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800"],
     "sellerId": 3,
     "startPrice": 2290000,
@@ -1488,7 +1488,7 @@
     "auctionId": 82,
     "title": "테일워커 낚시대 세트",
     "description": "입문용으로 구매 후 취미 변경으로 판매합니다. 정품 보증 가능합니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800",
       "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=800"
@@ -1543,7 +1543,7 @@
     "auctionId": 85,
     "title": "아크테릭스 베타 자켓",
     "description": "브랜드 정품이며 구매 영수증 있습니다. 먼저 연락 주시면 실착 사진 드립니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=800",
       "https://images.unsplash.com/photo-1591085686350-798c0f9faa7f?w=800"
@@ -1562,7 +1562,7 @@
     "auctionId": 86,
     "title": "아이오페 레티놀 엑스퍼트 세트",
     "description": "70% 이상 잔량, 직구 정품입니다. 냉암소 보관하였으며 유통기한 여유 있습니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1583209814683-c023dd293cc6?w=800",
       "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800",
@@ -1582,7 +1582,7 @@
     "auctionId": 87,
     "title": "총균쇠 (재레드 다이아몬드)",
     "description": "거의 새 책 상태입니다. 밑줄 없고 깨끗하게 보관했습니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": ["https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800"],
     "sellerId": 5,
     "startPrice": 350000,
@@ -1598,7 +1598,7 @@
     "auctionId": 88,
     "title": "에이스 매트리스 퀸사이즈",
     "description": "미개봉 새 제품입니다. 이중 포장으로 안전하게 배송해드립니다.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800",
       "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800"
@@ -1617,7 +1617,7 @@
     "auctionId": 89,
     "title": "수영 오리발 아레나",
     "description": "1년 미만 사용, 관리 잘 된 제품입니다. 추가 액세서리 포함.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": [
       "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800",
       "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800",
@@ -1672,7 +1672,7 @@
     "auctionId": 92,
     "title": "나이키 에어포스 1 화이트 270",
     "description": "작년 구매, 사이즈가 맞지 않아 판매합니다. 택 포함, 거의 새 것 상태입니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": [
       "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=800",
       "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=800",
@@ -1692,7 +1692,7 @@
     "auctionId": 93,
     "title": "에스티로더 갈색병 세럼 100ml",
     "description": "백화점 구매 정품, 영수증 있습니다. 개인 사정으로 판매합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": ["https://images.unsplash.com/photo-1487015307662-6ce6210680f1?w=800"],
     "sellerId": 3,
     "startPrice": 1370000,
@@ -1708,7 +1708,7 @@
     "auctionId": 94,
     "title": "원씽 (게리 켈러)",
     "description": "전집 세트 전권 포함, 케이스까지 완전한 상태입니다.",
-    "category": "BOOK",
+    "category": "BOOK_TICKET",
     "imageUrls": [
       "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800",
       "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800"
@@ -1727,7 +1727,7 @@
     "auctionId": 95,
     "title": "쿠쿠 IH 전기밥솥 10인용",
     "description": "정기 세척 및 필터 교체 완료 상태입니다. 설명서 및 추가 필터 포함.",
-    "category": "HOME",
+    "category": "FURNITURE_INTERIOR",
     "imageUrls": [
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
       "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800",
@@ -1747,7 +1747,7 @@
     "auctionId": 96,
     "title": "요가 매트 TPE 프리미엄",
     "description": "시즌 1회 사용 후 보관 중입니다. 스크래치 없이 깨끗한 상태입니다.",
-    "category": "SPORTS",
+    "category": "SPORTS_LEISURE",
     "imageUrls": ["https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=800"],
     "sellerId": 2,
     "startPrice": 1880000,
@@ -1802,7 +1802,7 @@
     "auctionId": 99,
     "title": "리바이스 501 청바지 W32",
     "description": "정품 구매, 빈티지 느낌으로 관리 잘 되어 있습니다. 교환 불가합니다.",
-    "category": "FASHION",
+    "category": "CLOTHING",
     "imageUrls": ["https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800"],
     "sellerId": 1,
     "startPrice": 2390000,
@@ -1818,7 +1818,7 @@
     "auctionId": 100,
     "title": "필립스 루메아 IPL 제모기",
     "description": "해외 면세점 구매, 정품 보증 가능합니다. 사용감 없이 깨끗합니다.",
-    "category": "BEAUTY",
+    "category": "GOODS",
     "imageUrls": [
       "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=800",
       "https://images.unsplash.com/photo-1487015307662-6ce6210680f1?w=800"
