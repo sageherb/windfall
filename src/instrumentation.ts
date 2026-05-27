@@ -18,8 +18,13 @@ export async function register() {
       console.log("[demo-mock-srv] edge runtime — skipping msw/node");
       return;
     }
-    const { server } = await import("@/mocks/node");
-    server.listen({ onUnhandledRequest: "bypass" });
+    // turbopackIgnore: tells Turbopack not to follow this dynamic import
+    // statically — it would otherwise try to bundle msw/node into the edge
+    // runtime where @mswjs/interceptors can't resolve.
+    const mod = await import(/* turbopackIgnore: true */ "./mocks/node");
+    (mod as { server: { listen: (opts: { onUnhandledRequest: string }) => void } }).server.listen({
+      onUnhandledRequest: "bypass",
+    });
     // eslint-disable-next-line no-console
     console.log("[demo-mock-srv] msw/node server.listen OK");
   } catch (e) {
