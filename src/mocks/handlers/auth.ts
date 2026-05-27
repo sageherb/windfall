@@ -25,6 +25,17 @@ export const authHandlers = [
   // GET /api/v1/auth/validate-tokens — always success
   http.get("*/api/v1/auth/validate-tokens", () => HttpResponse.json(ok({ valid: true }))),
 
+  // GET /api/v1/auth?provider=... — OAuth init (returns a mock redirect URL)
+  http.get("*/api/v1/auth", ({ request }) => {
+    const provider = new URL(request.url).searchParams.get("provider") ?? "demo";
+    return HttpResponse.json(
+      ok({
+        provider,
+        redirectUrl: `/api/v1/auth/callback/${provider}`,
+      })
+    );
+  }),
+
   // OAuth callbacks — never used in demo (cookies already injected)
   http.get("*/api/v1/auth/callback/:provider", ({ params }) => {
     const s = getStore();
