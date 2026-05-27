@@ -9,7 +9,7 @@ function ok<T>(data: T, message = "정보를 불러왔습니다."): ApiResponse<
 }
 
 export const reviewHandlers = [
-  http.post("*/api/v1/reviews", async ({ request }) => {
+  http.post("/api/v1/reviews", async ({ request }) => {
     const body = (await request.json()) as Partial<ReviewRecord>;
     const s = getStore();
     const newId = Math.max(0, ...s.reviews.map((r) => r.reviewId)) + 1;
@@ -26,7 +26,7 @@ export const reviewHandlers = [
     return HttpResponse.json(ok({ reviewId: newId }), { status: 201 });
   }),
 
-  http.get("*/api/v1/reviews/:id", ({ params }) => {
+  http.get("/api/v1/reviews/:id", ({ params }) => {
     const s = getStore();
     const r = s.reviews.find((x) => x.reviewId === Number(params.id));
     if (!r) {
@@ -38,7 +38,7 @@ export const reviewHandlers = [
     return HttpResponse.json(ok(r));
   }),
 
-  http.put("*/api/v1/reviews/:id", async ({ params, request }) => {
+  http.put("/api/v1/reviews/:id", async ({ params, request }) => {
     const body = (await request.json()) as Partial<ReviewRecord>;
     const s = getStore();
     const r = s.reviews.find((x) => x.reviewId === Number(params.id));
@@ -47,7 +47,7 @@ export const reviewHandlers = [
     return HttpResponse.json(ok(r ?? null));
   }),
 
-  http.delete("*/api/v1/reviews/:id", ({ params }) => {
+  http.delete("/api/v1/reviews/:id", ({ params }) => {
     const s = getStore();
     s.reviews = s.reviews.filter((x) => x.reviewId !== Number(params.id));
     return HttpResponse.json(ok(null));

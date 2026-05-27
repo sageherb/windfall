@@ -28,7 +28,7 @@ export function broadcastSse(eventName: string, payload: NotificationRecord) {
 // SSE handler is appended into this array in the next task.
 export const notificationHandlers = [
   // GET /api/v1/notifications — paginated list
-  http.get("*/api/v1/notifications", ({ request }) => {
+  http.get("/api/v1/notifications", ({ request }) => {
     const s = getStore();
     const url = new URL(request.url);
     const page = Math.max(0, Number(url.searchParams.get("page") ?? 0));
@@ -47,7 +47,7 @@ export const notificationHandlers = [
   }),
 
   // PATCH /api/v1/notifications — mark all read
-  http.patch("*/api/v1/notifications", () => {
+  http.patch("/api/v1/notifications", () => {
     const s = getStore();
     let count = 0;
     s.notifications.forEach((n) => {
@@ -60,7 +60,7 @@ export const notificationHandlers = [
   }),
 
   // PATCH /api/v1/notifications/:id — mark single read
-  http.patch("*/api/v1/notifications/:id", ({ params }) => {
+  http.patch("/api/v1/notifications/:id", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     const n = s.notifications.find((x) => x.notificationId === id);
@@ -69,7 +69,7 @@ export const notificationHandlers = [
   }),
 
   // GET /api/v1/notifications/subscribe — SSE stream
-  http.get("*/api/v1/notifications/subscribe", () => {
+  http.get("/api/v1/notifications/subscribe", () => {
     let controllerRef: ReadableStreamDefaultController | null = null;
 
     const stream = new ReadableStream({

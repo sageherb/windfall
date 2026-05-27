@@ -26,14 +26,14 @@ const RECENT_SEARCHES = [
 ];
 
 export const miscHandlers = [
-  http.get("*/api/v1/tags/search", ({ request }) => {
+  http.get("/api/v1/tags/search", ({ request }) => {
     const q = new URL(request.url).searchParams.get("query") ?? "";
     const filtered = q ? TAG_POOL.filter((t) => t.name.includes(q)) : TAG_POOL;
     return HttpResponse.json(ok(filtered));
   }),
 
-  http.get("*/api/v1/searches", () => HttpResponse.json(ok(RECENT_SEARCHES))),
-  http.post("*/api/v1/searches", () => HttpResponse.json(ok(null))),
-  http.delete("*/api/v1/searches/:id", () => HttpResponse.json(ok(null))),
-  http.delete("*/api/v1/searches", () => HttpResponse.json(ok(null))),
+  http.get("/api/v1/searches", () => HttpResponse.json(ok(RECENT_SEARCHES))),
+  http.post("/api/v1/searches", () => HttpResponse.json(ok(null))),
+  http.delete("/api/v1/searches/:id", () => HttpResponse.json(ok(null))),
+  http.delete("/api/v1/searches", () => HttpResponse.json(ok(null))),
 ];

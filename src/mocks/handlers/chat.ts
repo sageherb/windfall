@@ -11,7 +11,7 @@ function ok<T>(data: T, message = "정보를 불러왔습니다."): ApiResponse<
 
 export const chatHandlers = [
   // GET /api/v1/chat-rooms — list
-  http.get("*/api/v1/chat-rooms", () => {
+  http.get("/api/v1/chat-rooms", () => {
     const s = getStore();
     const rooms = [...s.chatRooms.values()].map((r) => {
       const auction = s.auctions.get(r.auctionId);
@@ -32,7 +32,7 @@ export const chatHandlers = [
   }),
 
   // POST /api/v1/chat-rooms — create (idempotent: returns existing if any)
-  http.post("*/api/v1/chat-rooms", async ({ request }) => {
+  http.post("/api/v1/chat-rooms", async ({ request }) => {
     const body = (await request.json()) as { auctionId?: number };
     const s = getStore();
     const existing = [...s.chatRooms.values()].find((r) => r.auctionId === body.auctionId);
@@ -54,7 +54,7 @@ export const chatHandlers = [
   }),
 
   // GET /api/v1/chat-rooms/:id
-  http.get("*/api/v1/chat-rooms/:id", ({ params }) => {
+  http.get("/api/v1/chat-rooms/:id", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     const room = s.chatRooms.get(id);
@@ -80,7 +80,7 @@ export const chatHandlers = [
   }),
 
   // GET /api/v1/chat-rooms/:id/messages
-  http.get("*/api/v1/chat-rooms/:id/messages", ({ params, request }) => {
+  http.get("/api/v1/chat-rooms/:id/messages", ({ params, request }) => {
     const s = getStore();
     const id = Number(params.id);
     const room = s.chatRooms.get(id);
@@ -121,7 +121,7 @@ export const chatHandlers = [
   }),
 
   // PATCH /api/v1/chat-rooms/:id/messages/read — REST fallback when WS down
-  http.patch("*/api/v1/chat-rooms/:id/messages/read", ({ params }) => {
+  http.patch("/api/v1/chat-rooms/:id/messages/read", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     const room = s.chatRooms.get(id);

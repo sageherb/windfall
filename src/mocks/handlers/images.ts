@@ -27,7 +27,7 @@ export const imageHandlers = [
   // POST /api/v1/auction-images — accepts a multipart upload of one or more files
   // and returns an array of { imageId, imageUrl }. Frontend reads response.data
   // as that array and maps each entry to .imageId.
-  http.post("*/api/v1/auction-images", async ({ request }) => {
+  http.post("/api/v1/auction-images", async ({ request }) => {
     let count = 1;
     try {
       const form = await request.formData();
@@ -46,5 +46,5 @@ export const imageHandlers = [
     );
   }),
 
-  http.post("*/api/v1/chat-images", () => HttpResponse.json(ok([newImage()]))),
+  http.post("/api/v1/chat-images", () => HttpResponse.json(ok([newImage()]))),
 ];

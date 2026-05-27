@@ -49,7 +49,7 @@ function buildHistory(a: AuctionRecord, now: number, limit: number) {
 
 export const auctionHandlers = [
   // GET /api/v1/auctions (main) — popular + process + scheduled
-  http.get("*/api/v1/auctions", () => {
+  http.get("/api/v1/auctions", () => {
     const s = getStore();
     const now = Date.now();
     const project = (id: number) => {
@@ -79,7 +79,7 @@ export const auctionHandlers = [
   }),
 
   // GET /api/v1/auctions/search
-  http.get("*/api/v1/auctions/search", ({ request }) => {
+  http.get("/api/v1/auctions/search", ({ request }) => {
     const s = getStore();
     const url = new URL(request.url);
     const query = (url.searchParams.get("query") ?? "").trim();
@@ -141,7 +141,7 @@ export const auctionHandlers = [
   }),
 
   // GET /api/v1/auctions/:id
-  http.get("*/api/v1/auctions/:id", ({ params }) => {
+  http.get("/api/v1/auctions/:id", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     const a = s.auctions.get(id);
@@ -187,7 +187,7 @@ export const auctionHandlers = [
   }),
 
   // GET /api/v1/auctions/:id/history
-  http.get("*/api/v1/auctions/:id/history", ({ params, request }) => {
+  http.get("/api/v1/auctions/:id/history", ({ params, request }) => {
     const s = getStore();
     const id = Number(params.id);
     const a = s.auctions.get(id);
@@ -215,21 +215,21 @@ export const auctionHandlers = [
   }),
 
   // POST /api/v1/auctions/:id/like  — toggle
-  http.post("*/api/v1/auctions/:id/like", ({ params }) => {
+  http.post("/api/v1/auctions/:id/like", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     if (s.likes.has(id)) s.likes.delete(id);
     else s.likes.add(id);
     return HttpResponse.json(ok({ isLiked: s.likes.has(id) }));
   }),
-  http.delete("*/api/v1/auctions/:id/like", ({ params }) => {
+  http.delete("/api/v1/auctions/:id/like", ({ params }) => {
     const s = getStore();
     s.likes.delete(Number(params.id));
     return HttpResponse.json(ok(null));
   }),
 
   // GET /api/v1/auctions/:id/notification-settings
-  http.get("*/api/v1/auctions/:id/notification-settings", ({ params }) => {
+  http.get("/api/v1/auctions/:id/notification-settings", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     return HttpResponse.json(
@@ -243,7 +243,7 @@ export const auctionHandlers = [
   }),
 
   // PUT /api/v1/auctions/:id/notification-settings — save settings
-  http.put("*/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
+  http.put("/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
     const body = (await request.json()) as {
       auctionStart?: boolean;
       auctionEnd?: boolean;
@@ -259,7 +259,7 @@ export const auctionHandlers = [
   }),
 
   // POST /api/v1/auctions/:id/notification-settings (legacy)
-  http.post("*/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
+  http.post("/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
     const body = (await request.json()) as { auctionStart?: boolean; startAlert?: boolean };
     const s = getStore();
     const id = Number(params.id);
@@ -270,7 +270,7 @@ export const auctionHandlers = [
   }),
 
   // POST /api/v1/auctions/:id/notification-settings/start (legacy single-flag)
-  http.post("*/api/v1/auctions/:id/notification-settings/start", ({ params }) => {
+  http.post("/api/v1/auctions/:id/notification-settings/start", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     if (s.notificationSubs.has(id)) s.notificationSubs.delete(id);
@@ -279,7 +279,7 @@ export const auctionHandlers = [
   }),
 
   // GET /api/v1/auctions/:sellerId/seller — seller info
-  http.get("*/api/v1/auctions/:sellerId/seller", ({ params }) => {
+  http.get("/api/v1/auctions/:sellerId/seller", ({ params }) => {
     const s = getStore();
     const sellerId = Number(params.sellerId);
     const seller = s.users.get(sellerId) ?? s.currentUser;
@@ -317,7 +317,7 @@ export const auctionHandlers = [
   }),
 
   // POST /api/v1/auctions — create
-  http.post("*/api/v1/auctions", async ({ request }) => {
+  http.post("/api/v1/auctions", async ({ request }) => {
     const body = (await request.json()) as Partial<AuctionRecord>;
     const s = getStore();
     const newId = Math.max(...s.auctions.keys()) + 1;
@@ -345,7 +345,7 @@ export const auctionHandlers = [
   }),
 
   // DELETE /api/v1/auctions/:id
-  http.delete("*/api/v1/auctions/:id", ({ params }) => {
+  http.delete("/api/v1/auctions/:id", ({ params }) => {
     const s = getStore();
     const id = Number(params.id);
     s.auctions.delete(id);

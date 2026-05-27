@@ -44,7 +44,7 @@ function slice<T>(items: T[], page: number, size: number): SliceResponse<T> {
 
 export const userHandlers = [
   // GET /api/v1/users/:userId
-  http.get("*/api/v1/users/:userId", ({ params }) => {
+  http.get("/api/v1/users/:userId", ({ params }) => {
     const s = getStore();
     const id = Number(params.userId);
     const user = s.users.get(id) ?? s.currentUser;
@@ -62,7 +62,7 @@ export const userHandlers = [
   }),
 
   // PUT /api/v1/users/names
-  http.put("*/api/v1/users/names", async ({ request }) => {
+  http.put("/api/v1/users/names", async ({ request }) => {
     const body = (await request.json()) as { username?: string };
     const s = getStore();
     if (body.username) s.currentUser.username = body.username;
@@ -70,14 +70,14 @@ export const userHandlers = [
   }),
 
   // PUT /api/v1/users/images
-  http.put("*/api/v1/users/images", () => {
+  http.put("/api/v1/users/images", () => {
     const s = getStore();
     s.currentUser.userProfileUrl = `https://images.unsplash.com/photo-1521119989659-a83eee488004?w=200&h=200&fit=crop&t=${Date.now()}`;
     return HttpResponse.json(ok({ profileImage: s.currentUser.userProfileUrl }));
   }),
 
   // GET /api/v1/users/:userId/sales
-  http.get("*/api/v1/users/:userId/sales", ({ params, request }) => {
+  http.get("/api/v1/users/:userId/sales", ({ params, request }) => {
     const s = getStore();
     const sellerId = Number(params.userId);
     const url = new URL(request.url);
@@ -91,7 +91,7 @@ export const userHandlers = [
   }),
 
   // GET /api/v1/users/:userId/reviews — reviews written for this seller
-  http.get("*/api/v1/users/:userId/reviews", ({ params, request }) => {
+  http.get("/api/v1/users/:userId/reviews", ({ params, request }) => {
     const s = getStore();
     const sellerId = Number(params.userId);
     const url = new URL(request.url);
@@ -123,7 +123,7 @@ export const userHandlers = [
   }),
 
   // GET /api/v1/me/likes
-  http.get("*/api/v1/me/likes", ({ request }) => {
+  http.get("/api/v1/me/likes", ({ request }) => {
     const s = getStore();
     const url = new URL(request.url);
     const page = Number(url.searchParams.get("page") ?? 0);
@@ -137,7 +137,7 @@ export const userHandlers = [
   }),
 
   // GET /api/v1/me/recentviews
-  http.get("*/api/v1/me/recentviews", ({ request }) => {
+  http.get("/api/v1/me/recentviews", ({ request }) => {
     const s = getStore();
     const url = new URL(request.url);
     const page = Number(url.searchParams.get("page") ?? 0);
@@ -151,7 +151,7 @@ export const userHandlers = [
   }),
 
   // POST /api/v1/recentview/:auctionId
-  http.post("*/api/v1/recentview/:auctionId", ({ params }) => {
+  http.post("/api/v1/recentview/:auctionId", ({ params }) => {
     const s = getStore();
     const id = Number(params.auctionId);
     s.recentViews = [id, ...s.recentViews.filter((x) => x !== id)].slice(0, 30);
@@ -159,7 +159,7 @@ export const userHandlers = [
   }),
 
   // DELETE /api/v1/recentview/:auctionId
-  http.delete("*/api/v1/recentview/:auctionId", ({ params }) => {
+  http.delete("/api/v1/recentview/:auctionId", ({ params }) => {
     const s = getStore();
     const id = Number(params.auctionId);
     s.recentViews = s.recentViews.filter((x) => x !== id);
@@ -168,7 +168,7 @@ export const userHandlers = [
 
   // GET /api/v1/me/notifications — paginated list of auctions the user has
   // notification-subscribed to (used by NotificationPreferenceList).
-  http.get("*/api/v1/me/notifications", ({ request }) => {
+  http.get("/api/v1/me/notifications", ({ request }) => {
     const s = getStore();
     const url = new URL(request.url);
     const page = Number(url.searchParams.get("page") ?? 0);

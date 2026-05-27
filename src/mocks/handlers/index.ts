@@ -33,7 +33,7 @@ const sockjsTransportStub = http.all(
 // Catch-all for any /api/proxy/* request we forgot to mock.
 // Without it MSW would `passthrough` to the dummy NEXT_PUBLIC_API_URL and
 // surface "Failed to fetch" noise in the console.
-const catchAllProxy = http.all("*/api/v1/*", ({ request }) => {
+const catchAllProxy = http.all("/api/v1/*", ({ request }) => {
   const u = new URL(request.url);
 
   console.warn("[demo-mock] unhandled", request.method, u.pathname, u.search);

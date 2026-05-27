@@ -9,7 +9,7 @@ function ok<T>(data: T, message = "정보를 불러왔습니다."): ApiResponse<
 }
 
 export const purchaseHandlers = [
-  http.get("*/api/v1/me/purchases", ({ request }) => {
+  http.get("/api/v1/me/purchases", ({ request }) => {
     const s = getStore();
     const url = new URL(request.url);
     const page = Number(url.searchParams.get("page") ?? 0);
@@ -55,7 +55,7 @@ export const purchaseHandlers = [
     return HttpResponse.json(ok(body));
   }),
 
-  http.post("*/api/v1/trades/:tradeId/confirm", ({ params }) => {
+  http.post("/api/v1/trades/:tradeId/confirm", ({ params }) => {
     const s = getStore();
     const tid = Number(params.tradeId);
     const p = s.purchases.find((x) => x.tradeId === tid);
