@@ -163,10 +163,10 @@ export const auctionHandlers = [
         imageUrls: a.imageUrls,
         seller: {
           sellerId: seller.userId,
-          name: seller.username,
-          profileImage: seller.userProfileUrl,
+          username: seller.username,
+          profileImageUrl: seller.userProfileUrl,
           rating: seller.rating,
-          totalReviews: seller.totalReviews,
+          reviewCount: seller.totalReviews,
         },
         startPrice: a.startPrice,
         dropAmount: a.dropAmount,

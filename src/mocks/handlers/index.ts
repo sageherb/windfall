@@ -22,6 +22,14 @@ const sockjsInfoStub = http.get("*/ws-stomp*/info*", () =>
   })
 );
 
+// SockJS transport polling URLs (e.g. /702/<session>/xhr_streaming, /jsonp).
+// Refuse them quickly so the client gives up rather than retrying through
+// passthrough against the unreachable dummy API URL.
+const sockjsTransportStub = http.all(
+  "*/ws-stomp*/*",
+  () => new HttpResponse(null, { status: 404 })
+);
+
 // Catch-all for any /api/proxy/* request we forgot to mock.
 // Without it MSW would `passthrough` to the dummy NEXT_PUBLIC_API_URL and
 // surface "Failed to fetch" noise in the console.
@@ -46,5 +54,6 @@ export const handlers = [
   ...reviewHandlers,
   ...miscHandlers,
   sockjsInfoStub,
+  sockjsTransportStub,
   catchAllProxy,
 ];
