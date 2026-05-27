@@ -266,13 +266,35 @@ export const auctionHandlers = [
     const s = getStore();
     const sellerId = Number(params.sellerId);
     const seller = s.users.get(sellerId) ?? s.currentUser;
+
+    const buyers = s.reviews
+      .filter((r) => r.revieweeId === sellerId)
+      .slice(0, 3)
+      .map((r) => ({
+        buyerId: r.reviewerId,
+        username: s.users.get(r.reviewerId)?.username ?? "익명",
+        content: r.content,
+      }));
+
+    const sellerAuctions = [...s.auctions.values()]
+      .filter((a) => a.sellerId === sellerId)
+      .slice(0, 5)
+      .map((a) => ({
+        auctionId: a.auctionId,
+        title: a.title,
+        auctionImageUrl: a.imageUrls[0],
+      }));
+
     return HttpResponse.json(
       ok({
         sellerId: seller.userId,
-        name: seller.username,
-        profileImage: seller.userProfileUrl,
+        username: seller.username,
+        profileImageUrl: seller.userProfileUrl,
         rating: seller.rating,
+        reviewCount: seller.totalReviews,
         totalReviews: seller.totalReviews,
+        buyers,
+        auctions: sellerAuctions,
       })
     );
   }),
