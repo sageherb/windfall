@@ -64,6 +64,7 @@
     "@commitlint/config-conventional": "^20.2.0",
     "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
+    "@mswjs/interceptors": "^0.41.9",
     "@next/eslint-plugin-next": "^16.0.8",
     "@stylistic/eslint-plugin": "^3.1.0",
     "@tailwindcss/postcss": "^4",

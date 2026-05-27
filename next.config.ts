@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_DEMO: process.env.NEXT_PUBLIC_DEMO ?? "true",
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL ?? "https://demo-disabled.local",
   },
+  // [demo-mock] Keep msw out of the edge runtime / instrumentation bundle.
+  // Turbopack tries to follow dynamic imports statically and pulls in
+  // @mswjs/interceptors, which doesn't resolve cleanly under edge.
+  serverExternalPackages: ["msw", "@mswjs/interceptors"],
   reactCompiler: true,
   images: {
     remotePatterns: [
