@@ -20,7 +20,6 @@ export async function register() {
     // eslint-disable-next-line no-console
     console.log("[demo-mock] msw/node server.listen() OK");
   } catch (e) {
-    // eslint-disable-next-line no-console
     console.error("[demo-mock] register() failed:", e);
   }
 }
