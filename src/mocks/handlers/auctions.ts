@@ -234,21 +234,38 @@ export const auctionHandlers = [
     const id = Number(params.id);
     return HttpResponse.json(
       ok({
-        startAlert: s.notificationSubs.has(id),
-        endAlert: false,
+        auctionStart: s.notificationSubs.has(id),
+        auctionEnd: false,
         priceReached: false,
         price: 0,
       })
     );
   }),
 
-  // POST /api/v1/auctions/:id/notification-settings (toggle individual settings)
-  http.post("*/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
-    const body = (await request.json()) as { startAlert?: boolean };
+  // PUT /api/v1/auctions/:id/notification-settings — save settings
+  http.put("*/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
+    const body = (await request.json()) as {
+      auctionStart?: boolean;
+      auctionEnd?: boolean;
+      priceReached?: boolean;
+      price?: number;
+    };
     const s = getStore();
     const id = Number(params.id);
-    if (body.startAlert) s.notificationSubs.add(id);
-    else if (body.startAlert === false) s.notificationSubs.delete(id);
+    const anyOn = body.auctionStart || body.auctionEnd || body.priceReached;
+    if (anyOn) s.notificationSubs.add(id);
+    else s.notificationSubs.delete(id);
+    return HttpResponse.json(ok({ updated: true }));
+  }),
+
+  // POST /api/v1/auctions/:id/notification-settings (legacy)
+  http.post("*/api/v1/auctions/:id/notification-settings", async ({ params, request }) => {
+    const body = (await request.json()) as { auctionStart?: boolean; startAlert?: boolean };
+    const s = getStore();
+    const id = Number(params.id);
+    const on = body.auctionStart ?? body.startAlert;
+    if (on) s.notificationSubs.add(id);
+    else if (on === false) s.notificationSubs.delete(id);
     return HttpResponse.json(ok({ updated: true }));
   }),
 

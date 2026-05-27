@@ -112,9 +112,14 @@ function buildStore(): DemoStore {
     chatMessages.set(Number(key), msgs);
   });
 
-  // Pre-subscribe to one upcoming auction so the T+5s demo alert has a target.
+  // Pre-subscribe to several auctions so the notification-preference page is
+  // populated and the T+5s SSE demo alert has a target.
   const notificationSubs = new Set<number>();
   if (scheduledIds[0] !== undefined) notificationSubs.add(scheduledIds[0]);
+  if (scheduledIds[1] !== undefined) notificationSubs.add(scheduledIds[1]);
+  if (processIds[0] !== undefined) notificationSubs.add(processIds[0]);
+  if (processIds[3] !== undefined) notificationSubs.add(processIds[3]);
+  if (popularIds[0] !== undefined) notificationSubs.add(popularIds[0]);
 
   return {
     currentUser: currentUserSeed as UserRecord,

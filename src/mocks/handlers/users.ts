@@ -12,13 +12,17 @@ function ok<T>(data: T, message = "정보를 불러왔습니다."): ApiResponse<
 
 function projectAuctionCard(a: AuctionRecord, now: number, isLiked: boolean) {
   const currentPrice = computeCurrentPrice(a, now);
+  const discountPercent = computeDiscountRate(a.startPrice, currentPrice);
   return {
     auctionId: a.auctionId,
-    imageUrl: a.imageUrls[0],
     title: a.title,
+    auctionImageUrl: a.imageUrls[0],
+    imageUrl: a.imageUrls[0],
     startPrice: a.startPrice,
     currentPrice,
-    discountRate: computeDiscountRate(a.startPrice, currentPrice),
+    endPrice: a.status === "COMPLETED" ? currentPrice : undefined,
+    discountPercent,
+    discountRate: discountPercent,
     isLiked,
     startedAt: a.startedAt,
     status: a.status,
@@ -149,17 +153,38 @@ export const userHandlers = [
     return HttpResponse.json(ok(null));
   }),
 
-  // GET /api/v1/me/notifications — notification settings
-  http.get("*/api/v1/me/notifications", () =>
-    HttpResponse.json(
-      ok({
-        chatMessage: true,
-        auctionStartWishlist: true,
-        priceDrop: true,
-        saleSuccess: true,
-        paymentSuccess: true,
-        reviewRegistered: true,
-      })
-    )
-  ),
+  // GET /api/v1/me/notifications — paginated list of auctions the user has
+  // notification-subscribed to (used by NotificationPreferenceList).
+  http.get("*/api/v1/me/notifications", ({ request }) => {
+    const s = getStore();
+    const url = new URL(request.url);
+    const page = Number(url.searchParams.get("page") ?? 0);
+    const size = Number(url.searchParams.get("size") ?? 5);
+    const now = Date.now();
+    const items = [...s.notificationSubs]
+      .map((id) => s.auctions.get(id))
+      .filter((a): a is NonNullable<typeof a> => a !== undefined)
+      .map((a) => {
+        const currentPrice = computeCurrentPrice(a, now);
+        const discountPercent = computeDiscountRate(a.startPrice, currentPrice);
+        return {
+          status: a.status,
+          auctionId: a.auctionId,
+          title: a.title,
+          auctionImageUrl: a.imageUrls[0],
+          startPrice: a.startPrice,
+          currentPrice,
+          endPrice: a.status === "COMPLETED" ? currentPrice : undefined,
+          discountPercent,
+          startedAt: a.startedAt,
+          notificationInfo: {
+            alertStart: true,
+            alertEnd: false,
+            alertPrice: false,
+            triggerPrice: 0,
+          },
+        };
+      });
+    return HttpResponse.json(ok(slice(items, page, size)));
+  }),
 ];
