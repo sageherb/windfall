@@ -47,9 +47,42 @@ export interface DemoStore {
   firstDemoAlertSent: boolean;
 }
 
+export function rebaseAuctionTimes(seed: AuctionRecord[], now: number): AuctionRecord[] {
+  const MIN = 60_000;
+  return seed.map((a) => {
+    if (a.status === "PROCESS") {
+      const minutesAgo = 1 + ((a.auctionId * 7) % 50);
+      return {
+        ...a,
+        startedAt: new Date(now - minutesAgo * MIN).toISOString(),
+        createdDate: new Date(now - (minutesAgo + 60) * MIN).toISOString(),
+      };
+    }
+    if (a.status === "SCHEDULED") {
+      const minutesAhead = 5 + ((a.auctionId * 11) % 115);
+      return {
+        ...a,
+        startedAt: new Date(now + minutesAhead * MIN).toISOString(),
+        createdDate: new Date(now - 60 * MIN).toISOString(),
+      };
+    }
+    if (a.status === "COMPLETED") {
+      const minutesAgo = 1440 + ((a.auctionId * 13) % 2880);
+      return {
+        ...a,
+        startedAt: new Date(now - minutesAgo * MIN).toISOString(),
+        createdDate: new Date(now - (minutesAgo + 60) * MIN).toISOString(),
+      };
+    }
+    return a;
+  });
+}
+
 function buildStore(): DemoStore {
+  const now = Date.now();
+  const rebased = rebaseAuctionTimes(auctionsSeed as AuctionRecord[], now);
   const auctions = new Map<number, AuctionRecord>();
-  (auctionsSeed as AuctionRecord[]).forEach((a) => auctions.set(a.auctionId, a));
+  rebased.forEach((a) => auctions.set(a.auctionId, a));
 
   const popularIds = (auctionsSeed as AuctionRecord[])
     .filter((a) => a.auctionId >= 31 && a.auctionId <= 45)
